@@ -129,10 +129,12 @@ function wcjhb_maybe_process_form() {
 		wp_redirect( WCJHB_ERROR_PAGE_SLUG );
 		die();
 	}
+
 	/**
-	 * Filtering the input using PHPs filter_input function
+	 * Filtering the input using PHPs filter_var function
 	 */
-	$name  = filter_input( $_POST[ 'name' ], FILTER_SANITIZE_STRING );
+	$name  = filter_var( $_POST[ 'name' ], FILTER_SANITIZE_STRING );
+
 	/**
 	 * Filtering the input using WordPress sanatizing functions
 	 * See https://developer.wordpress.org/plugins/security/securing-input/
