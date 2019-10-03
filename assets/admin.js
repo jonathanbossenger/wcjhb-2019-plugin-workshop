@@ -9,6 +9,7 @@ jQuery(document).ready(function ($) {
 		jQuery.post(
 			wcjhb_ajax.ajax_url,
 			{
+				'_ajax_nonce': wcjhb_ajax.nonce,
 				'action': 'delete_form_submission',
 				'id': id,
 			},
